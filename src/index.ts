@@ -29,16 +29,19 @@ class Employee implements Person{
 
 class Box<T> {
 
-    private value: T,
-
-    get value(): T {
+    public value: T;
+    constructor(value: T) {
+        this.value = value;
+    }
+    getValue(): T {
         return this.value;
     }
 
-    set value(value: T) {
+    setValue(value: T): void {
         this.value = value;
     }
 }
+
 
 const me = {
     age: 26,
@@ -59,7 +62,7 @@ console.log(person)
 const emp = new Employee("Bobby", 7, "bobbyjo123@gmail.com");
 console.log(emp)
 
-const box = new Box<number>;
+const box = new Box<number>(10);
 console.log(box.value);
 
 export {}
